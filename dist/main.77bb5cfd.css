@@ -3,6 +3,14 @@ body {
 }
 body h1 {
   color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+body img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

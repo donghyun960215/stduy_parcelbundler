@@ -5,5 +5,9 @@ body {
     background-color: $color--black;
     h1 {
         color: $color--white;
+        display: flex;
+    }
+    img{
+        display: flex;
     }
 }

@@ -22,5 +22,49 @@ favicon.ico (웹페이지 아이콘) 사용시 (https://www.icoconverter.com/ �
     "staticPath": "static"
   }
 3. 새로운 폴더 static 만들고 정적파일
+```
 
+## autoprefixer
+```plaintext
+1. npm i -D postcss 를 입력해서 개발 의존성으로 다운로드
+2. npm i -D autoprefixer 를 입력해서 개발 의존성으로 다운로드
+3. package.json 에서 새로은 옵션 추가
+    "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+4. .postcssrc.js 이름으로 새로운 파일 추가
+    nodejs 방식으로 import와 export 를 해준다.
+```
+```plaintext
+*javascript 방식의 import 와 export 
+import autoprefixer from 'autoprefixer'
+
+    export{
+        Plugins: [
+            autoprefixer
+        ]
+} 
+
+*nodejs 방식의 import와 export
+const autoprefixer = require('autoprefixer')
+
+module.exports = {
+    Plugins: [
+        autoprefixer
+    ]
+}
+간소화
+module.exports = {
+    Plugins: [
+        require('autoprefixer')
+    ]
+}
+```
+```plaintext
+5. 그 후 npm run dev 로 실행을 하게 되면 postcss 와 autoprefixer 의 버전 충돌이 일어난다.
+6. autoprefixer 를 다운그레이드를 해준다.(npm i -D autoprefixer@9 를 입력해서 9버전으로 다운로드)
+7. 그 다음 실행을 하게 되면 정상 작동을 한다.
+8. css로 display: flex;를 입력하고 브라우저에서 개발자모드로 그 부분을 눌러서 보게 되면 
+   내가 작성한 display빼고도 구형버전에 맞게 새로 추가가 되면서 밑줄이 그어져 있다.
 ```
