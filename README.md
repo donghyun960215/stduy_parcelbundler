@@ -68,3 +68,33 @@ module.exports = {
 8. css로 display: flex;를 입력하고 브라우저에서 개발자모드로 그 부분을 눌러서 보게 되면 
    내가 작성한 display빼고도 구형버전에 맞게 새로 추가가 되면서 밑줄이 그어져 있다.
 ```
+
+## babel
+```plaintext
+Babel은 ECMAScript 2015+(ES6) 코드를 이전 JavaScript 엔진에서 실행할 수 있는 이전 버전과 호환되는 JavaScript 코드로 변환하는 데 
+주로 사용되는 무료 오픈 소스 JavaScript 트랜스컴파일러입니다. 웹 개발자는 언어의 최신 기능을 활용할 수 있습니다.
+구형 버전의 브라우저에서도 작동을 할 수 있게 해주는 프로그램이다.
+
+ES6
+
+ES7           --------------------->             ES5
+                        BABEL
+ES8
+```
+```plaintext
+1. npm i -D @babel/core @bable/preset-env
+   npm i -D @babel/plugin-transform-runtime
+   npm i -D @bable/preset-env
+   를 입력하여 개발의존성 모드로 다운로드
+2. .babelrc.js 파일 생성 후 nodejs 방식으로 import와 export 해준다.
+    module.exports = {
+    preset: ['babel/preset-env'],
+    plugin: [
+        ['@babel/plugin-transform-runtime']
+    ]
+  }
+3. package.json 에 옵션 추가
+    내용은 postcss를 추가할 때 사용했던 옵션과 동일하다 
+    babel 추가시 이미 postcss를 추가해서 package.json 에 옵션을 추가 했다면 안해도 된다.
+```
+
